@@ -1,0 +1,45 @@
+﻿@model UserManagement.Web.Models.Users.LogListViewModel
+
+<h2>Logs List</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Information</th>
+                <th>Timestamp</th>
+                <th style="width: 1px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>
+                        @item.LogId
+                    </td>
+                    <td>
+                        @item.ActionDescription
+                    </td>
+                    <td>
+                        @item.TimeStamp
+                    </td>
+                    <td>
+                        <a asp-controller="Logs" asp-action="ViewLogs" asp-route-logId=@item.LogId>AdditionalDetails</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <div class="btn-group" role="group">
+        <a asp-controller="Logs" asp-action="LogsList" class="btn btn-default">Show All</a>
+        <a asp-controller="Logs" asp-action="FilterLogs" asp-route-criteria="created" class="btn btn-default">Created</a>
+        <a asp-controller="Logs" asp-action="FilterLogs" asp-route-criteria="updated" class="btn btn-default">Updated</a>
+        <a asp-controller="Logs" asp-action="FilterLogs" asp-route-criteria="deleted" class="btn btn-default">Deleted</a>
+    </div>
+</div>
+

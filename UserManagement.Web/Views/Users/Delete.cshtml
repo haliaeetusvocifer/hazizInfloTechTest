@@ -1,0 +1,31 @@
+﻿@model UserManagement.Models.User
+
+<h2>Delete User</h2>
+
+<p>Are you sure you want to delete this user?</p>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label asp-for="Forename"></label>
+        @Model.Forename
+    </div>
+    <div>
+        <label asp-for="Surname"></label>
+        @Model.Surname
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        @Model.Email
+    </div>
+    <div>
+        <label asp-for="IsActive"></label>
+        @Model.IsActive
+    </div>
+    <div>
+        <label asp-for="DateofBirth"></label>
+        @Model.DateofBirth
+    </div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

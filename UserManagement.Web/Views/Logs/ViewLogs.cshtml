@@ -1,0 +1,29 @@
+﻿@model UserManagement.Web.Models.Users.LogListItemViewModel
+
+<h2>Log Info</h2>
+
+@{
+    <p><b>Id:</b> @Model.LogId</p>
+    <p><b>UserId:</b> @Model.UserId</p>
+    <p><b>ActionDescription:</b> @Model.ActionDescription</p>
+    <p><b>Timestamp:</b> @(Model.TimeStamp)</p>
+}
+
+@if (Model.User != null)
+{
+    <h4>User:</h4>
+    <p><b>Forename:</b> @Model.User.Forename</p>
+    <p><b>Surname:</b> @Model.User.Surname</p>
+    <p><b>Email:</b> @Model.User.Email</p>
+    <p><b>Date Of Birth:</b> @(Model.User.DateofBirth.ToString("dd/MM/yyyy"))</p>
+}
+
+@if (Model.AdditionalDetails != null)
+{
+    <h4>Details:</h4>
+    <p>@Model.AdditionalDetails</p>
+}
+
+<div>
+    <a asp-controller="Logs" asp-action="LogsList" class="btn btn-primary float-end">Back</a>
+</div>

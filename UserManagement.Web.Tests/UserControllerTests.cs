@@ -22,7 +22,6 @@ public class UserControllerTests
             .Should().BeOfType<UserListViewModel>()
             .Which.Items.Should().BeEquivalentTo(users);
     }
-
     private User[] SetupUsers(string forename = "Johnny", string surname = "User", string email = "juser@example.com", bool isActive = true)
     {
         var users = new[]
@@ -36,13 +35,17 @@ public class UserControllerTests
             }
         };
 
-        _userService
+        var mockUserService = new Mock<IUserService>(); // Declare the mockUserService here
+        mockUserService
             .Setup(s => s.GetAll())
             .Returns(users);
-
         return users;
     }
 
     private readonly Mock<IUserService> _userService = new();
     private UsersController CreateController() => new(_userService.Object);
+
+
+
+
 }
