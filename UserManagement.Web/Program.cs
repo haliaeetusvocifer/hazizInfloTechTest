@@ -13,6 +13,8 @@ builder.Services
 
 var app = builder.Build();
 
+// Inside Startup.cs, within ConfigureServices
+
 app.UseMarkdown();
 
 app.UseHsts();

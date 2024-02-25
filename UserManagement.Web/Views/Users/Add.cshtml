@@ -1,0 +1,33 @@
+﻿@model UserManagement.Models.User
+
+<h2>Add User</h2>
+
+<form asp-controller="Users" asp-action="Add" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Forename"></label>
+        <input asp-for="Forename" class="form-control" />
+        <span asp-validation-for="Forename" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Surname"></label>
+        <input asp-for="Surname" class="form-control" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="IsActive"></label>
+        <input asp-for="IsActive" class="form-control" />
+        <span asp-validation-for="IsActive" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="DateofBirth"></label>
+        <input asp-for="DateofBirth" class="form-control" />
+        <span asp-validation-for="DateofBirth" class="text-danger"></span>
+    </div>
+    <button type="submit">Add User</button>
+</form>

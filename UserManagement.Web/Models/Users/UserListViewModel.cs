@@ -1,4 +1,6 @@
-﻿namespace UserManagement.Web.Models.Users;
+﻿using System;
+
+namespace UserManagement.Web.Models.Users;
 
 public class UserListViewModel
 {
@@ -12,4 +14,6 @@ public class UserListItemViewModel
     public string? Surname { get; set; }
     public string? Email { get; set; }
     public bool IsActive { get; set; }
+    public DateTime DateofBirth { get; set; }
+    public List<LogListItemViewModel> Logs { get; set; } = default!;
 }
